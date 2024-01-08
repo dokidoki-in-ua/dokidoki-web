@@ -25,7 +25,7 @@ export default function RootLayout({
                 )}
             >
                 {children}
-                Hello World
+                Hello World from Docker
                 <Button>CLick Me</Button>
             </body>
         </html>
