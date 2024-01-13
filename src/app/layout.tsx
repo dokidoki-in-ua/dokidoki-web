@@ -11,11 +11,7 @@ export const metadata: Metadata = {
     description: 'plug',
 }
 
-export default function RootLayout({
-    children,
-}: {
-    children: React.ReactNode
-}) {
+const RootLayout = ({ children }: { children: React.ReactNode }) => {
     return (
         <html lang='en'>
             <body
@@ -25,9 +21,9 @@ export default function RootLayout({
                 )}
             >
                 {children}
-                Hello World from Docker
-                <Button>CLick Me</Button>
             </body>
         </html>
     )
 }
+
+export default RootLayout
