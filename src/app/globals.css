@@ -10,7 +10,7 @@
         --font-hover: #ffffff;
 
         --primary: #1e2128;
-        --primary-hover: #22262e;
+        --primary-hover: #272c36;
         --primary-active: #16181d;
 
         --secondary: #ee811c;
@@ -49,6 +49,6 @@
         @apply bg-background text-font;
     }
     svg {
-        @apply w-full h-full
+        @apply w-fit h-fit
     }
 }
