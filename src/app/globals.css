@@ -10,12 +10,12 @@
         --font-hover: #ffffff;
 
         --primary: #1e2128;
-        --primary-hover: #22262e;
+        --primary-hover: #272c36;
         --primary-active: #16181d;
 
-        --secondary: #ee811c;
+        --secondary: #ea580c;
         --secondary-hover: #fb8c24;
-        --secondary-active: #d37319;
+        --secondary-active: #d3510c;
 
         --canvas: #1e2128;
 
@@ -43,9 +43,12 @@
 
 @layer base {
     * {
-        @apply border-transparent box-border;
+        @apply box-border border-transparent;
     }
     body {
         @apply bg-background text-font;
+    }
+    svg {
+        @apply h-fit w-fit;
     }
 }
