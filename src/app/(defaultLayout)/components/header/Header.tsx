@@ -1,6 +1,9 @@
 import { Logo } from '@/components/svg/Logo'
+import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import { RiArrowDropDownFill } from 'react-icons/ri'
+import { GrSearch } from 'react-icons/gr'
+import { LuUser2 } from 'react-icons/lu'
 
 const Header = () => {
     return (
@@ -15,10 +18,10 @@ const Header = () => {
                     </Link>
 
                     <div className='flex'>
-                        <div className='flex cursor-pointer items-center px-2 duration-200 hover:bg-primary-hover hover:text-font-hover'>
+                        <Button className='flex h-full cursor-pointer items-center rounded-none px-2 text-[16px] font-normal duration-200 hover:bg-primary-hover hover:text-font-hover'>
                             <span>Аніме</span>
                             <RiArrowDropDownFill size={22} />
-                        </div>
+                        </Button>
 
                         <Link
                             href={''}
@@ -34,6 +37,17 @@ const Header = () => {
                             Манга
                         </Link>
                     </div>
+                </div>
+                <div className='flex h-full'>
+                    {/* there will be a separate Search component */}
+                    <button className='flex items-center px-4 duration-200 hover:bg-primary-hover hover:fill-white hover:text-font-hover'>
+                        <GrSearch size={22} />
+                    </button>
+                    {/* ===== */}
+                    {/* there will be a separate User Menu component */}
+                    <button className='flex items-center px-4 duration-200 hover:bg-primary-hover hover:fill-white hover:text-font-hover'>
+                        <LuUser2 size={24} />
+                    </button>
                 </div>
             </div>
         </div>
