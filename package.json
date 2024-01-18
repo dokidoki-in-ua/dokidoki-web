@@ -9,7 +9,7 @@
         "lint": "next lint",
         "prepare": "husky install",
         "format": "prettier . --write",
-        "pre-commit": "npm run format && git add -A . && npm run lint"
+        "pre-commit": "npm run format && npm run lint"
     },
     "dependencies": {
         "@radix-ui/react-slot": "^1.0.2",
