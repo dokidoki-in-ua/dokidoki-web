@@ -4,7 +4,7 @@ const DefaultLayout = ({ children }: { children: React.ReactNode }) => {
     return (
         <div className='flex h-full min-h-full flex-col'>
             <Header />
-            {children}
+            <main className='page-content pt-[60px]'>{children}</main>
         </div>
     )
 }
