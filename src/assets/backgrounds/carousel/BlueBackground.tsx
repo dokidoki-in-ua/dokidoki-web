@@ -50,7 +50,7 @@ const BlueBackground = () => {
             </svg>
 
             <svg
-                className='absolute h-[1200px] right-0 top-0 translate-x-[81%]'
+                className='absolute right-0 top-0 h-[1200px] translate-x-[81%]'
                 viewBox='0 0 451.8 262'
                 aria-hidden='true'
                 role='img'
@@ -74,7 +74,7 @@ const BlueBackground = () => {
             </svg>
 
             <svg
-                className='absolute h-[1200px] right-0 top-0 translate-x-[81%]'
+                className='absolute right-0 top-0 h-[1200px] translate-x-[81%]'
                 viewBox='0 0 451.8 262'
                 aria-hidden='true'
                 role='img'

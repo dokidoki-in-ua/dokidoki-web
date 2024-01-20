@@ -60,10 +60,6 @@ const CarouselLogic = ({
     //     [children, currentIndex]
     // )
 
-    return (
-        <CarouselView>
-            
-        </CarouselView>
-    )
+    return <CarouselView></CarouselView>
 }
 export default CarouselLogic
