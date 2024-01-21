@@ -49,6 +49,6 @@
         @apply bg-background text-font;
     }
     svg {
-        @apply h-fit w-fit fill-inherit;
+        @apply h-fit w-fit fill-inherit stroke-inherit;
     }
 }

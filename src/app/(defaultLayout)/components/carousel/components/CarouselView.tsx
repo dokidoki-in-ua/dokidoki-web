@@ -1,6 +1,6 @@
 import BlueBackground from '@/assets/backgrounds/carousel/BlueBackground'
 import Link from 'next/link'
-import { MdArrowForwardIos, MdArrowBackIosNew  } from 'react-icons/md'
+import { MdArrowForwardIos, MdArrowBackIosNew } from 'react-icons/md'
 
 const CarouselView = () => {
     return (

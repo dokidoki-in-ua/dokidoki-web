@@ -18,7 +18,7 @@ const Header = () => {
                     </Link>
 
                     <div className='flex'>
-                        <Button className='flex h-full cursor-pointer items-center rounded-none px-2 text-[16px] font-normal duration-200 hover:bg-primary-hover hover:text-font-hover'>
+                        <Button className='flex h-full cursor-pointer items-center rounded-none fill-font px-2 text-[16px] font-normal duration-200 hover:bg-primary-hover hover:fill-font-hover hover:text-font-hover'>
                             <span>Аніме</span>
                             <RiArrowDropDownFill size={22} />
                         </Button>
@@ -40,12 +40,12 @@ const Header = () => {
                 </div>
                 <div className='flex h-full'>
                     {/* there will be a separate Search component */}
-                    <button className='flex items-center px-4 duration-200 hover:bg-primary-hover hover:fill-white hover:text-font-hover'>
+                    <button className='flex items-center stroke-font px-4 duration-200  hover:bg-primary-hover hover:fill-white hover:stroke-font-hover'>
                         <GrSearch size={22} />
                     </button>
                     {/* ===== */}
                     {/* there will be a separate User Menu component */}
-                    <button className='flex items-center px-4 duration-200 hover:bg-primary-hover hover:fill-white hover:text-font-hover'>
+                    <button className='hover:stroke-red flex items-center fill-transparent stroke-font px-4 duration-200 hover:bg-primary-hover hover:stroke-font-hover'>
                         <LuUser2 size={24} />
                     </button>
                 </div>
