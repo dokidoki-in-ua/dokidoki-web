@@ -46,6 +46,15 @@ module.exports = {
                     DEFAULT: 'var(--span)',
                 },
             },
+            animation: {
+                progress: 'progress 8s linear forwards'
+            },
+            keyframes: {
+                progress: {
+                    '0%' : {width: '0%'},
+                    '100%' : {width: '100%'},
+                }
+            }
         },
     },
     plugins: [require('tailwindcss-animate')],

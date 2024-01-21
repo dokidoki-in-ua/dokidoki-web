@@ -27,7 +27,7 @@ const CarouselView: React.FC<CarouselViewProps> = ({
     bgActive,
 }) => {
     return (
-        <div className='relative grid w-full grid-rows-[500px_70px] [grid-template-areas:"content"_"navigation"]'>
+        <div className='relative grid w-full grid-rows-[500px_70px] [grid-template-areas:"content"_"tabs"]'>
             <div className='relative [grid-area:content]'>
                 <div className='absolute bottom-0 left-0 right-0 top-0 bg-gradient-to-b from-orange-500 via-amber-400 to-orange-500'>
                     <BlueBackground />

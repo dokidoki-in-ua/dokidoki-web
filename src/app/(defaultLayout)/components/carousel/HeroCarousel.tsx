@@ -8,7 +8,6 @@ import CarouselSlide from './components/CarouselSlide'
 import Image from 'next/image'
 import { Slide } from '@/types/carousel.types'
 
-
 // prettier-ignore
 const slides: Slide[] = [
     { id: 6, anime_id: 1084, content_path: devImage, alias: 'hell-s-paradise', title: 'Пекельний рай' },
