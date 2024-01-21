@@ -39,7 +39,7 @@ const CarouselTabs: React.FC<CarouselTabsProps> = ({
                                 ref={tabRef}
                                 className={
                                     index === currentIndex
-                                        ? 'before:animate-progress absolute left-0 top-0 h-[3px] w-full scale-y-100 bg-[#ffffff80] opacity-100 duration-150 before:block before:h-full before:w-0 before:bg-secondary before:content-[""]'
+                                        ? 'absolute left-0 top-0 h-[3px] w-full scale-y-100 bg-[#ffffff80] opacity-100 duration-150 before:block before:h-full before:w-0 before:animate-progress before:bg-secondary before:content-[""]'
                                         : ''
                                 }
                                 onAnimationEnd={handleAnimationEnd}
