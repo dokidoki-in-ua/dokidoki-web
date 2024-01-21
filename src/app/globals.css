@@ -51,4 +51,7 @@
     svg {
         @apply h-fit w-fit fill-inherit stroke-inherit;
     }
+    img {
+        @apply select-none
+    }
 }

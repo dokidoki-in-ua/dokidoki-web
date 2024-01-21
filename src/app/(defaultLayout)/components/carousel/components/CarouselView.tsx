@@ -1,8 +1,31 @@
 import BlueBackground from '@/assets/backgrounds/carousel/BlueBackground'
 import Link from 'next/link'
 import { MdArrowForwardIos, MdArrowBackIosNew } from 'react-icons/md'
+import { Children } from 'react'
+import CarouselTabs from './CarouselTabs'
+import { Slide } from '@/types/carousel.types'
 
-const CarouselView = () => {
+interface CarouselViewProps {
+    children: React.ReactNode
+    currentIndex: number
+    updateIndex: (newIndex: number) => void
+    trackRef: React.RefObject<HTMLDivElement>
+    slides: Slide[]
+    animationPaused: string
+    setIsPaused: React.Dispatch<React.SetStateAction<boolean>>
+    bgActive: number
+}
+
+const CarouselView: React.FC<CarouselViewProps> = ({
+    children,
+    currentIndex,
+    updateIndex,
+    trackRef,
+    slides,
+    animationPaused,
+    setIsPaused,
+    bgActive,
+}) => {
     return (
         <div className='relative grid w-full grid-rows-[500px_70px] [grid-template-areas:"content"_"navigation"]'>
             <div className='relative [grid-area:content]'>
@@ -14,22 +37,45 @@ const CarouselView = () => {
             </div>
 
             <div className='relative m-[0_auto] grid items-center text-center [grid-area:content] [grid-template-areas:"viewbox"]'>
-                <div className='z-[1] grid [grid-area:viewbox]'>
-                    <button className='flex h-[35px] w-[35px] translate-x-[-35px] cursor-pointer items-center justify-center bg-transparent fill-black duration-300 hover:bg-[#1e1f24b4] hover:fill-[#fff]'>
+                <div className='z-[0] grid [grid-area:viewbox]'>
+                    <button
+                        className={`flex h-[35px] w-[35px] translate-x-[-35px] cursor-pointer items-center justify-center bg-transparent fill-black duration-300 hover:bg-[#1e1f24b4] hover:fill-[#fff] ${currentIndex === 0 ? 'hidden' : ''}`}
+                        onClick={() => {
+                            updateIndex(currentIndex - 1)
+                        }}
+                    >
                         <MdArrowBackIosNew size={28} />
                     </button>
                 </div>
 
                 <div className='z-[1] w-[1000px] overflow-hidden text-center [grid-area:viewbox]'>
-                    <div className='grid h-[20px] grid-cols-1 grid-rows-1'></div>
+                    <div
+                        className='grid grid-flow-col grid-rows-1 overflow-hidden overscroll-x-none [scroll-snap-type:x_mandatory]'
+                        ref={trackRef}
+                    >
+                        {children}
+                    </div>
                 </div>
 
-                <div className='z-[1] grid [grid-area:viewbox]'>
-                    <button className='flex h-[35px] w-[35px] translate-x-[35px] cursor-pointer items-center justify-center justify-self-end bg-transparent fill-black duration-300 hover:bg-[#1e1f24b4] hover:fill-[#fff]'>
+                <div className='z-[0] grid [grid-area:viewbox]'>
+                    <button
+                        className={`flex h-[35px] w-[35px] translate-x-[35px] cursor-pointer items-center justify-center justify-self-end bg-transparent fill-black duration-300 hover:bg-[#1e1f24b4] hover:fill-[#fff] ${currentIndex === Children.count(children) - 1 ? 'hidden' : ''}`}
+                        onClick={() => {
+                            updateIndex(currentIndex + 1)
+                        }}
+                    >
                         <MdArrowForwardIos size={28} />
                     </button>
                 </div>
             </div>
+
+            <CarouselTabs
+                slides={slides}
+                currentIndex={currentIndex}
+                updateIndex={updateIndex}
+                animationPaused={animationPaused}
+                setIsPaused={setIsPaused}
+            />
         </div>
     )
 }
