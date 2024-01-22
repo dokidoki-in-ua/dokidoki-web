@@ -1,7 +1,6 @@
 import BlueBackground from '@/assets/backgrounds/carousel/BlueBackground'
-import Link from 'next/link'
 import { MdArrowForwardIos, MdArrowBackIosNew } from 'react-icons/md'
-import { Children } from 'react'
+import { Children, useState } from 'react'
 import CarouselTabs from './CarouselTabs'
 import { Slide } from '@/types/carousel.types'
 
@@ -11,8 +10,6 @@ interface CarouselViewProps {
     updateIndex: (newIndex: number) => void
     trackRef: React.RefObject<HTMLDivElement>
     slides: Slide[]
-    animationPaused: string
-    setIsPaused: React.Dispatch<React.SetStateAction<boolean>>
     bgActive: number
 }
 
@@ -22,10 +19,10 @@ const CarouselView: React.FC<CarouselViewProps> = ({
     updateIndex,
     trackRef,
     slides,
-    animationPaused,
-    setIsPaused,
     bgActive,
 }) => {
+    const [animationPaused, setAnimationPaused] = useState<string>('running')
+
     return (
         <div className='relative grid w-full grid-rows-[500px_70px] [grid-template-areas:"content"_"tabs"]'>
             <div className='relative [grid-area:content]'>
@@ -52,6 +49,8 @@ const CarouselView: React.FC<CarouselViewProps> = ({
                     <div
                         className='grid grid-flow-col grid-rows-1 overflow-hidden overscroll-x-none [scroll-snap-type:x_mandatory]'
                         ref={trackRef}
+                        onMouseEnter={() => setAnimationPaused('paused')}
+                        onMouseLeave={() => setAnimationPaused('running')}
                     >
                         {children}
                     </div>
@@ -74,7 +73,7 @@ const CarouselView: React.FC<CarouselViewProps> = ({
                 currentIndex={currentIndex}
                 updateIndex={updateIndex}
                 animationPaused={animationPaused}
-                setIsPaused={setIsPaused}
+                setAnimationPaused={setAnimationPaused}
             />
         </div>
     )

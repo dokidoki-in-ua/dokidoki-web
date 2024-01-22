@@ -1,26 +1,16 @@
 import React, { Children, useCallback, useRef, useState } from 'react'
-import internal from 'stream'
 import CarouselView from './CarouselView'
 import { Slide } from '@/types/carousel.types'
 
 interface CarouselLogicProps {
     children: React.ReactNode
-    isPaused: boolean
     slides: Slide[] // Add a more specific interface for your slides array
-    setIsPaused: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-const CarouselLogic: React.FC<CarouselLogicProps> = ({
-    children,
-    isPaused,
-    slides,
-    setIsPaused,
-}) => {
+const CarouselLogic: React.FC<CarouselLogicProps> = ({ children, slides }) => {
     const [currentIndex, setCurrentIndex] = useState<number>(0)
     const trackRef = useRef<HTMLDivElement>(null)
     const [bgActive, setBgActive] = useState<number>(0)
-
-    const animationPaused = isPaused ? 'paused' : 'running'
 
     const updateIndex = useCallback(
         (newIndex: number) => {
@@ -42,12 +32,6 @@ const CarouselLogic: React.FC<CarouselLogicProps> = ({
             tabIndices.forEach((index, i) => {
                 setTimeout(
                     () => {
-                        const tab = document.getElementById(
-                            `.carousel_tab:nth-child(${index + 1})`
-                        )
-                        if (tab) {
-                            // tab.classList.add(styles.activeTab)
-                        }
                         setTimeout(() => {
                             if (i === tabIndices.length - 1) {
                                 setBgActive(index)
@@ -76,8 +60,6 @@ const CarouselLogic: React.FC<CarouselLogicProps> = ({
             updateIndex={updateIndex}
             trackRef={trackRef}
             slides={slides}
-            animationPaused={animationPaused}
-            setIsPaused={setIsPaused}
             bgActive={bgActive}
         >
             {Children.map(children, (child, index) => {

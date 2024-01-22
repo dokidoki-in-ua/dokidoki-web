@@ -19,16 +19,10 @@ const slides: Slide[] = [
 ];
 
 const HeroCarousel = () => {
-    const [isPaused, setIsPaused] = useState<boolean>(false)
-
     return (
-        <CarouselLogic
-            slides={slides}
-            isPaused={isPaused}
-            setIsPaused={setIsPaused}
-        >
+        <CarouselLogic slides={slides}>
             {slides.map((item) => (
-                <CarouselSlide key={item.id} setIsPaused={setIsPaused}>
+                <CarouselSlide key={item.id}>
                     <picture>
                         <Image
                             src={item.content_path}
