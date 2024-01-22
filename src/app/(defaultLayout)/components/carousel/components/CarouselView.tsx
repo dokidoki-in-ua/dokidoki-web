@@ -3,6 +3,8 @@ import { MdArrowForwardIos, MdArrowBackIosNew } from 'react-icons/md'
 import { Children, useState } from 'react'
 import CarouselTabs from './CarouselTabs'
 import { Slide } from '@/types/carousel.types'
+import OrangeBackground from '@/assets/backgrounds/carousel/OrangeBackground'
+import BubblesBackground from '@/assets/backgrounds/carousel/BubblesBackground'
 
 interface CarouselViewProps {
     children: React.ReactNode
@@ -27,9 +29,9 @@ const CarouselView: React.FC<CarouselViewProps> = ({
         <div className='relative grid w-full grid-rows-[500px_70px] [grid-template-areas:"content"_"tabs"]'>
             <div className='relative [grid-area:content]'>
                 <div className='absolute bottom-0 left-0 right-0 top-0 bg-gradient-to-b from-orange-500 via-amber-400 to-orange-500'>
-                    <BlueBackground />
-                    {/* bg2 */}
-                    {/* bg3 */}
+                    <BlueBackground bgActive={bgActive} />
+                    <OrangeBackground bgActive={bgActive} />
+                    <BubblesBackground bgActive={bgActive} />
                 </div>
             </div>
 
