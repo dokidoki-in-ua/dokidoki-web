@@ -1,7 +1,7 @@
 const OrangeBackground = ({ bgActive }: { bgActive: number }) => {
     const activeClass =
         bgActive === 0 || bgActive === 4 ? 'opacity-1' : 'opacity-0 '
-    
+
     return (
         <div
             className={`absolute bottom-0 left-0 right-0 top-0 flex justify-center overflow-hidden

@@ -10,10 +10,10 @@ import { Slide } from '@/types/carousel.types'
 
 // prettier-ignore
 const slides: Slide[] = [
-    { id: 6, anime_id: 1084, content_path: devImage, alias: 'hell-s-paradise', title: 'Пекельний рай' },
+    { id: 6, anime_id: 1084, content_path: devImage, alias: 'hell-s-paradise', title: 'Пекельний рай льний райльний рай льний рай льний рай льний рай' },
     { id: 5, anime_id: 1084, content_path: devImage, alias: 'hell-s-paradise', title: 'Пекельний рай' },
-    { id: 4, anime_id: 1084, content_path: devImage, alias: 'hell-s-paradise', title: 'Пекельний рай' },
-    { id: 3, anime_id: 1084, content_path: devImage, alias: 'hell-s-paradise', title: 'Пекельний рай' },
+    { id: 4, anime_id: 1084, content_path: devImage, alias: 'hell-s-paradise', title: 'Пекельний рай льний рай льний рай' },
+    { id: 3, anime_id: 1084, content_path: devImage, alias: 'hell-s-paradise', title: 'Пекельний райльний рай льний рай льний рай' },
     { id: 2, anime_id: 1084, content_path: devImage, alias: 'hell-s-paradise', title: 'Пекельний рай' },
     { id: 1, anime_id: 1084, content_path: devImage, alias: 'hell-s-paradise', title: 'Пекельний рай' },
 ];

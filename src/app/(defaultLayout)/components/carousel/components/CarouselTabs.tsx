@@ -28,7 +28,7 @@ const CarouselTabs: React.FC<CarouselTabsProps> = ({
                 {slides.map((item, index) => {
                     return (
                         <button
-                            className={`relative cursor-pointer  p-[0.9rem_0.5rem] duration-200  hover:text-font-hover  ${index === currentIndex ? 'bg-[#2b354d] hover:bg-[#374463] active:bg-[#232c3f]' : 'bg-primary hover:bg-primary-hover active:bg-primary-active'}`}
+                            className={`relative cursor-pointer  p-[0.9rem_0.5rem] duration-200  hover:text-font-hover bg-primary hover:bg-primary-hover active:bg-primary-active  ${index === currentIndex ? 'bg-[#2b354d] text-white hover:bg-[#374463] active:bg-[#232c3f]' : ''}`}
                             onClick={() => {
                                 updateIndex(index)
                             }}
@@ -45,7 +45,9 @@ const CarouselTabs: React.FC<CarouselTabsProps> = ({
                                 }
                                 onAnimationEnd={handleAnimationEnd}
                             />
-                            <span className={''}>{item.title}</span>
+                            <span className='line-clamp-2 max-h-8 text-left text-[13px] font-bold leading-tight'>
+                                {item.title}
+                            </span>
                         </button>
                     )
                 })}
